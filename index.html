@@ -14,16 +14,12 @@
 <body>
 
     <header class="header">
-        <div class="header_container">
-        <div class="header_menu">
-        <a href="#" class="logo">
-        <object type="image/svg+xml" data="./assets/logo.svg" class="logo-object">
-         Your browser does not support SVG
-        </object>
-        </a> 
-        <div class="header_panel">
-        <nav class="header-nav">
+        <div class="container">
+        <nav class="header_menu">
             <ul class="nav-list">
+              <li class="logo-object"><a href="#" class="nav-link logo"><object type="image/svg+xml" data="./assets/logo.svg" class="logo-object">
+                Your browser does not support SVG
+               </object></a></li>
               <li class="nav-item"><a href="#" class="nav-link">Каталог</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Преимущества</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Примеры работ</a></li>
@@ -33,17 +29,18 @@
               <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
             </ul>
           </nav>
-        </div>
-    </div>
     <span class="border_line"></span>
-    <div class="header_points">
-    <div class="theme_block"><b>Кровельные и фасадные материалы</b> в Тюмени и области. Профессиональный монтаж с 2010 года.</div>
+    <div class="header_menu">
+    <div class="theme_block">
+        <p><b>Кровельные и фасадные материалы</b> в Тюмени и области.</p>
+        <p> Профессиональный монтаж с 2010 года.</p>
+    </div>
     <div class="pdf_block">
-        <a href="#" class="pdf_button">Pdf</a>
+        <div class="pdf_button"><a href="#">Pdf</a></div>
         <a href="#" class="download_price clickable_link">Скачать прайс-каталог</a>
     </div>
     <div class="big-logo"><img src="./assets/logo_big.png" alt="logo_big"></div>
-    <div class="social_links">
+    <div class="social_links theme_block">
         <p>Отвечаем <b>онлайн</b></p>
         <ul class="social_links_buttons">
             <li class="social_links-item"><a href="#" class="viber-link"></a></li>
@@ -51,7 +48,7 @@
             <li class="social_links-item"><a href="#" class="telegram-link"></a></li>
         </ul>
     </div>
-    <div class="contacts">
+    <div class="contacts theme_block">
         <p><b>Пн-Пт</b> 9:00 - 18:00, <b>Сб</b>10:00 - 18:00</p>
         <h3>8 (800) 222-54-60</h3>
         <a href="#" class="call_link clickable_link">Позвоните мне</a>
@@ -61,8 +58,8 @@
     </header>
 
 <main>
+<div class="container">
 <section class="landing_text">
-
 <h1 class="landing_title">Продажа <b>кровельных материалов</b> в Тюмени и Тюменской области </h1>
 <div class="title_addition">
     <div class="dots">
@@ -93,7 +90,7 @@
       </ul>
 
 </section>
-
+</div>
 </main>
 <script  src="./script.js">
 </script>  

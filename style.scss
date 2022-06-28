@@ -29,9 +29,9 @@ $color_text: #1C1C1C;
 
 
 //Size
-$display-width: 1920px;
-$content-width: 1570px;
-$mobile-width: 320px;
+$display-width: 100vw;
+$content-width: 81.77vw;
+$mobile-width: 16.67vw;
 $border-main: 500px;
 
 
@@ -125,33 +125,36 @@ h2 {
     @include columns;
 }
 
-.header_container {
-    @include flex-primary;
-}
 
-.header_panel {
+.header_menu {
     display: flex;
     align-items: center;
-    gap: 196px;
+    justify-content: space-between;
 }
+
 
 
 //Navigation
 
 .nav-list {
+    padding: 2.24vw 0 1.92vw 0;
+    width: 100vw;
     display: flex;
-    gap:42px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba($color_text, .07);   
 }
 
 .nav-link {
     list-style: none;
     cursor: pointer;
-    @extend %font-title;
-    @include font($size: 0.8rem, $height: 1.05rem, $weight: 500);
+    @include font($size: 0.7rem, $height: 0.98rem, $weight: 500);
+    text-transform: uppercase;
+    letter-spacing: 5%;
     @extend %transition; 
     color: $color_text;
     &:hover {
-        color: $color_button;
+        color: $color_theme;
     }
 }
 
@@ -163,50 +166,51 @@ h2 {
 
 
 
-//Logo
-
 .logo {
     @extend %transition;
-    display: flex;
-    gap: 6px;
     cursor: pointer;
-    &:hover {
-            filter: invert(25%) sepia(37%) saturate(3402%) hue-rotate(318deg) brightness(93%) contrast(104%);
-    }
-    margin-top: 25px;
-    margin-bottom: 34px;
-    width: 216px;
 }
 
 .logo-object {
-    width: 30px;
-    height: 30px;
     cursor: pointer;
 }
 
-.logo-text {
-    @extend %font-logo;
-    @include font($size: 1.6rem, $height: 1.94rem);
-    color: $color_text;
-    align-self: flex-end; 
+// Theme block
+
+p {
+@include font($size: 0.6rem, $height: 1.5rem, $weight: 400);
 }
+
+
+
+.theme_block {
+    @include columns;
+    text-align: center;
+}
+
+
+.clickable_link {
+    @include font($size: 0.6rem, $height: 1.5rem, $weight: 400);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: $color_button;
+
+}
+
+.pdf_button {
+width: 4.57vw;
+height: 4.57vw;
+border-radius: 50%;
+box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+align-content: center;
+}
+
+
 
 // Button
 
 .button {
-    @extend %font-title;
-    background: $color_button;
-    padding: 10px 30px;
-    color: $color_text;
-    @extend %font-title;
-    @include font($size: 0.8rem, $height: 1.05rem, $weight: 500);
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
-    @extend %transition;
-        &:hover {
-            background: $color_primary;
-        }
+  
     
 }
 

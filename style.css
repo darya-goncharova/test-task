@@ -81,6 +81,11 @@ textarea {
   outline: none;
 }
 
+.nav-link, .logo {
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -108,11 +113,11 @@ body {
 }
 
 .container {
-  max-width: 1570px;
+  max-width: 81.77vw;
   margin: 0 auto;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 16.67vw) {
   .container {
     padding: 0 21px;
   }
@@ -132,5 +137,112 @@ h2 {
   font-weight: 400;
   line-height: 1.95rem;
   color: #1C1C1C;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-list {
+  padding: 2.24vw 0 1.92vw 0;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.07);
+}
+
+.nav-link {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  color: #1C1C1C;
+}
+
+.nav-link:hover {
+  color: #F38120;
+}
+
+@media (max-width: 16.67vw) {
+  .header-nav {
+    display: none;
+  }
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo-object {
+  cursor: pointer;
+}
+
+p {
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.theme_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.clickable_link {
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  -webkit-text-decoration-color: #12C868;
+          text-decoration-color: #12C868;
+}
+
+.pdf_button {
+  width: 4.57vw;
+  height: 4.57vw;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 /*# sourceMappingURL=style.css.map */
