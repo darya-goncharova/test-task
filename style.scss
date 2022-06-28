@@ -1,0 +1,114 @@
+//Reset
+
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{  scroll-behavior: smooth; overflow-x:hidden;height:100%;width:100%;font-size:100%;line-height:1;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{  padding: 0; border: none; font: inherit; color: inherit; background-color: transparent; cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+textarea {font-family: inherit;font-size: inherit; line-height: inherit; border: none; background-color: transparent;resize: none; outline: none;}
+  
+
+
+
+// Colors
+
+$color_theme:#F38120;
+$color_theme_hover:#FD9C49;
+$color_button:#12C868;
+$color_button_hover:#21E27C;
+$color_text: #1C1C1C;
+
+
+//Size
+$display-width: 1920px;
+$content-width: 1570px;
+$mobile-width: 320px;
+$border-main: 500px;
+
+
+
+// Mixins
+
+@mixin font ($size, $height: $size, $weight: bold, $style: normal) {
+    font-size: $size;
+    font-style: $style;
+    font-weight: $weight;
+    line-height: $height;
+}
+
+
+@mixin media-mobile {
+    @media (max-width: $mobile-width) { @content; }
+}
+
+
+@mixin columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@mixin flex-primary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+// Placeholders
+
+%transition {
+    transition: all .3s ease-out;
+}
+
+%font-primary {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+// Commons
+
+
+html {
+    font-size: 20px;
+}
+
+body {
+    @extend %font-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(./assets/BG.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: $content-width;
+    margin: 0 auto;
+    @include media-mobile {
+        padding: 0 21px;
+    }
+}
+
+  h1 {
+    @extend %font-primary;
+    @include font($height: 4.25rem, $size: 2.75rem, $weight: 600);
+    color: $color_text;
+    // @include media-mobile {
+    //     @include font($height: 4.2rem, $size: 3.2rem);
+    // }
+}
+
