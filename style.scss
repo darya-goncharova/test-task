@@ -54,7 +54,6 @@ $border-main: 500px;
 @mixin columns {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 
@@ -88,10 +87,12 @@ html {
 
 body {
     @extend %font-primary;
-    display: flex;
-    flex-direction: column;
+    @include columns;
     justify-content: space-between;
-    background-image: url(./assets/BG.jpg) no-repeat;
+    background-image: url(./assets/BG.jpg);
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -104,11 +105,108 @@ body {
 }
 
   h1 {
-    @extend %font-primary;
-    @include font($height: 4.25rem, $size: 2.75rem, $weight: 600);
+    @include font($height: 4.25rem, $size: 2.75rem, $weight: 300);
     color: $color_text;
     // @include media-mobile {
     //     @include font($height: 4.2rem, $size: 3.2rem);
     // }
+}
+
+h2 {  
+    @include font($height: 1.95rem, $size: 1.6rem, $weight: 400);
+    color: $color_text;
+}
+
+
+
+// Header
+
+.header {
+    @include columns;
+}
+
+.header_container {
+    @include flex-primary;
+}
+
+.header_panel {
+    display: flex;
+    align-items: center;
+    gap: 196px;
+}
+
+
+//Navigation
+
+.nav-list {
+    display: flex;
+    gap:42px;
+}
+
+.nav-link {
+    list-style: none;
+    cursor: pointer;
+    @extend %font-title;
+    @include font($size: 0.8rem, $height: 1.05rem, $weight: 500);
+    @extend %transition; 
+    color: $color_text;
+    &:hover {
+        color: $color_button;
+    }
+}
+
+.header-nav {
+    @include media-mobile {
+        display: none;
+    }
+}
+
+
+
+//Logo
+
+.logo {
+    @extend %transition;
+    display: flex;
+    gap: 6px;
+    cursor: pointer;
+    &:hover {
+            filter: invert(25%) sepia(37%) saturate(3402%) hue-rotate(318deg) brightness(93%) contrast(104%);
+    }
+    margin-top: 25px;
+    margin-bottom: 34px;
+    width: 216px;
+}
+
+.logo-object {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.logo-text {
+    @extend %font-logo;
+    @include font($size: 1.6rem, $height: 1.94rem);
+    color: $color_text;
+    align-self: flex-end; 
+}
+
+// Button
+
+.button {
+    @extend %font-title;
+    background: $color_button;
+    padding: 10px 30px;
+    color: $color_text;
+    @extend %font-title;
+    @include font($size: 0.8rem, $height: 1.05rem, $weight: 500);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    @extend %transition;
+        &:hover {
+            background: $color_primary;
+        }
+    
 }
 
