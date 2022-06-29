@@ -70,21 +70,27 @@
         <p><strong>Пн-Пт</strong> 9:00 - 18:00, <strong>Сб</strong> 10:00 - 18:00</p>
         <h3>8 (800) 222-54-60</h3>
         <a href="#" class="call_link clickable_link">Позвоните мне</a>
+
         <div class="popup" id="popup">
             <div class="popup_body">
-                <button href="" class="round_button  popup_close"><img src="../../assets/icons/Xlose_Popup.svg" alt="close"></button>
+                <button href="" class="round_button  popup_close"><img src="./assets/popup_close.svg" alt="close"></button>
                 <div class="popup_content">
-                   <img class="popup_picture"></img>
-                   <div class="popup_text">
-                   <h3 class="popup_title"></h3>
-                   <h4 class="popup_breed"></h4>
-                   <h5 class="popup_description"></h5>
-                   <ul class="popup_list">
-                    <li class="modal__list-point"></li>
-                    <li class="modal__list-point"></li>
-                    <li class="modal__list-point"></li>
-                    <li class="modal__list-point"></li>
-                   </ul>
+                <div class="popup_title_block">
+                <h2 class="popup_title">Быстро оставить заявку</h2>
+                   <p class="popup_description">Введите номер, мы позвоним вам в течение 10 минут в рабочее время</p>
+                   <p>Пн–Пт 9:00 - 18:00, Сб 10:00 - 18:00</p>
+                </div>
+                   <div class="phone_block">
+                    <p>Введите номер телефона</p>
+                    <input type="tel" id="phone_input" placeholder="+7 ( _ _ _) _ _ - _ _ - _ _">
+                   </div>
+                <div class="button_popup">
+                   <button class="button button_buy button_buy_popup"><span>Позвоните мне</span><img src="./assets/arrow.svg" alt="arrow"></button> 
+                   <div class="confidence_part">
+                    <input type="checkbox" id="agreement" class="custom-checkbox"  name="agreement" checked>
+                    <label for="agreement"></label>
+                    <p>Нажимая кнопку вы соглашаетесь  с условиями <span>Политики конфиденциальности</span></p>
+                   </div>
                 </div>
                 </div>
             </div>
