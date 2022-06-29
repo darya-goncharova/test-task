@@ -26,6 +26,8 @@ $color_theme_hover:#FD9C49;
 $color_button:#12C868;
 $color_button_hover:#21E27C;
 $color_text: #1C1C1C;
+$color_background: #FFFFFF;
+
 
 
 //Size
@@ -88,7 +90,6 @@ html {
 body {
     @extend %font-primary;
     @include columns;
-    justify-content: space-between;
     background-image: url(./assets/BG.jpg);
     width: 100vw;
     background-position: center;
@@ -197,20 +198,181 @@ p {
 
 }
 
-.pdf_button {
-width: 4.57vw;
-height: 4.57vw;
-border-radius: 50%;
-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
-align-content: center;
+
+.pdf_block {
+    display: flex;
+    align-items: center;
+    gap: 17.15px;
 }
 
 
 
-// Button
+.big-logo {
+    width: 14.27vw;
+    height: 13.55vw;
+    background-image: url(./assets/biglogoform.png);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.social_links {
+    p::before{
+        content: "🞄"; 
+        color: $color_button;
+        padding-right: 4px;
+    }
+}
+
+.social_links_buttons {
+    display: flex;
+    gap: 0.73vw;
+}
+
+
+///icons
+
+.ico {
+    cursor: pointer;
+    display: inline-block;
+    width: 19.29px;
+    height: 19.29px;
+}
+
+.icon-circle {
+    width: 43.85px;
+    height: 43.85px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &_purple {
+        background-color: #976FCC;
+    }
+    &_green {
+        background-color: #12C868;
+    }
+    &_blue {
+        background-color: #05A0EB;;
+    }
+    &_white {
+        &:hover {
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05); 
+        @extend %transition;
+        }
+        a{
+            @include font($size: 0.55rem, $height: 0.67rem, $weight: 600);
+            color: $color_button;
+            }
+    }
+}
+
+.ico_viber {
+    background-image: url("./assets/viber.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ico_whatsup {
+    background-image: url("./assets/whatsup.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.ico_telegram {
+    background-image: url("./assets/telegram.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+
+//main
+
+.section_wrap {
+    display: flex;
+    gap: 3.7vw; 
+}
+
+
+.landing_text {
+@include columns;
+width: 37.92vw;
+height: 30.42vw;
+}
+
+
+.title_addition {
+    display: flex;
+    align-items: center;
+    gap: 0.83vw;
+}
+
+.dots {
+    display: flex;
+    gap: 0.367vw;
+}
+
+.dot {
+    width: 0.48vw;
+    height: 0.48vw;
+    border-radius: 50%;
+    border: 1.5px solid $color_button;
+    @extend %transition;
+    &:nth-child(2)  {
+        border: 1.5px solid rgba(18, 200, 104, 0.75);
+    }
+    &:nth-child(3)  {
+        border: 1.5px solid rgba(18, 200, 104, 0.5);
+    }
+    &:nth-child(4)  {
+        border: 1.5px solid rgba(18, 200, 104, 0.25);
+    }
+}
+
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .button {
-  
+    align-items: center;
+    padding: 1.4vw 0;
+    height: 5.2vw;
+    @include font($size: 0.7rem, $height: 0.98rem, $weight: 500);
+    color: $color_background;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+    border-radius: $border-main;
+    cursor: pointer;
+    @extend %transition;
+    &_cost {
+        background: $color_button;
+        width: 19.53vw;
+        &:hover {
+            background: $color_button_hover;
+        }
+    }
+    &_buy {
+        background: $color_theme;
+        width: 17.44vw;
+        &:hover {
+            background: $color_theme_hover;
+        }
+    }
     
+
 }
+
+
+.bullets {
+@include columns;
+width: 11.72vw;
+height: 32.63vw;
+}
+
+
 
