@@ -119,6 +119,10 @@ h2 {
 }
 
 
+h3 {
+    @include font($height: 1.34rem, $size: 1.1rem, $weight: 600);
+}
+
 
 // Header
 
@@ -179,7 +183,7 @@ h2 {
 // Theme block
 
 p {
-@include font($size: 0.6rem, $height: 1.5rem, $weight: 400);
+@include font($size: 0.6rem, $height: 1.1rem, $weight: 400);
 }
 
 
@@ -187,16 +191,36 @@ p {
 .theme_block {
     @include columns;
     text-align: center;
+    line-height: 0.9rem;
 }
+
+.introduction_block {
+    @include columns;
+    gap: 0.5vw;
+    width: 10.69vw;
+}
+
+.contacts {
+    width: 12.65vw;
+}
+
 
 
 .clickable_link {
-    @include font($size: 0.6rem, $height: 1.5rem, $weight: 400);
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: $color_button;
-
+    @include font($size: 0.6rem, $height: 0.73rem, $weight: 400);
+    color: $color_text;
+    &:hover {
+        color: $color_button;
+    }
+    &::after {
+        top: 3px;
+        display: block;
+        width: 100%;
+        content: '';
+        border-bottom: 2px dotted $color_button;
+    }
 }
+
 
 
 .pdf_block {
@@ -209,11 +233,18 @@ p {
 
 .big-logo {
     width: 14.27vw;
-    height: 13.55vw;
+    height: 7.7vw;
     background-image: url(./assets/biglogoform.png);
-    display: inline-flex;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
     align-items: center;
     justify-content: center;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 
@@ -287,6 +318,23 @@ p {
 
 }
 
+.contacts {
+    @include columns;
+    gap: 0.03vw; 
+}
+
+
+.call_link {
+    color: $color_button;
+    font-weight: bold;
+    width:fit-content;
+    align-self: center;
+    &:hover {
+        color: $color_button_hover;   
+    }
+}
+
+
 
 //main
 
@@ -297,7 +345,9 @@ p {
 
 
 .landing_text {
+padding-top: 4.3vw;
 @include columns;
+gap: 0.99vw;
 width: 37.92vw;
 height: 30.42vw;
 }
@@ -336,11 +386,16 @@ height: 30.42vw;
 .buttons {
     display: flex;
     flex-wrap: wrap;
+    gap:  0.9vw;
+    padding-top: 1.35vw;
 }
 
 .button {
+    display: inline-flex;
     align-items: center;
-    padding: 1.4vw 0;
+    justify-content: center;
+    gap: 1.71vw;
+    padding: 1.4vw 2vw 1.4vw 2.76vw;
     height: 5.2vw;
     @include font($size: 0.7rem, $height: 0.98rem, $weight: 500);
     color: $color_background;
@@ -354,6 +409,7 @@ height: 30.42vw;
         width: 19.53vw;
         &:hover {
             background: $color_button_hover;
+            gap: 1.3vw;
         }
     }
     &_buy {
@@ -361,18 +417,138 @@ height: 30.42vw;
         width: 17.44vw;
         &:hover {
             background: $color_theme_hover;
+            gap: 1.3vw;
         }
     }
-    
-
+    margin-bottom: 1vw;
 }
 
 
+.call_to_action {
+    width: 14.3vw;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.83vw;
+}
+
+
+
+
 .bullets {
+background-image: url(./assets/bullets_form.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+padding-top: 2.7vw;
 @include columns;
 width: 11.72vw;
 height: 32.63vw;
 }
 
+.bullets-list { 
+    @include columns;
+    text-align: center;
+}
+
+.shadow_bullet {
+    background-image: url(./assets/menu_shadow.png);
+    background-size: 100%;
+    height: 2.81vw;
+   
+}
+
+.bullets-item {
+    @include font($size: 0.7rem, $height: 1.1rem, $weight: 400);
+}
 
 
+
+//popup
+
+/*popup*/
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.6);
+    top:0;
+    left:0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.8s ease 0s;
+  }
+  
+  .popup_open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .popup_open .popup_content {
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
+  }
+  
+  .popup_body {
+    margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 952px;
+    
+  }
+  .popup_close {
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+  .popup_content {
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+   
+  }
+  .popup_picture {
+    background-image: url(../../assets/images/pets-jennifer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+  }
+  .popup_text {
+    width: 351px;
+    margin: 0 20px 0 29px;
+  }
+  .popup_title {
+    padding-bottom: 10px;
+  }
+  .popup_breed {
+  }
+  .popup_description {
+    padding: 40px 0 40px 0;
+  }
+  
+  .modal__list-point {
+    list-style-type: none; 
+    font-style: var(--font-styleG);
+    font-size: var(--font-small-text);
+    padding-bottom: 10px;
+  }
+  .modal__list-point::before {
+    color: var(--color-primary); 
+    content: "•"; 
+    padding-right: 10px; 
+   } 
+  
+   .modal__list-point > .description {
+    font-weight: 700;
+  }
+  
+  

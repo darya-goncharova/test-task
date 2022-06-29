@@ -137,6 +137,13 @@ h2 {
   color: #1C1C1C;
 }
 
+h3 {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.34rem;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +215,7 @@ p {
   font-size: 0.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.1rem;
 }
 
 .theme_block {
@@ -220,18 +227,43 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  line-height: 0.9rem;
+}
+
+.introduction_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5vw;
+  width: 10.69vw;
+}
+
+.contacts {
+  width: 12.65vw;
 }
 
 .clickable_link {
   font-size: 0.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5rem;
-  text-decoration: underline;
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
-  -webkit-text-decoration-color: #12C868;
-          text-decoration-color: #12C868;
+  line-height: 0.73rem;
+  color: #1C1C1C;
+}
+
+.clickable_link:hover {
+  color: #12C868;
+}
+
+.clickable_link::after {
+  top: 3px;
+  display: block;
+  width: 100%;
+  content: '';
+  border-bottom: 2px dotted #12C868;
 }
 
 .pdf_block {
@@ -246,17 +278,25 @@ p {
 
 .big-logo {
   width: 14.27vw;
-  height: 13.55vw;
+  height: 7.7vw;
   background-image: url(./assets/biglogoform.png);
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.big-logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 .social_links p::before {
@@ -337,6 +377,32 @@ p {
   background-size: contain;
 }
 
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.03vw;
+}
+
+.call_link {
+  color: #12C868;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.call_link:hover {
+  color: #21E27C;
+}
+
 .section_wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,6 +411,7 @@ p {
 }
 
 .landing_text {
+  padding-top: 4.3vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -352,6 +419,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 0.99vw;
   width: 37.92vw;
   height: 30.42vw;
 }
@@ -398,13 +466,22 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 0.9vw;
+  padding-top: 1.35vw;
 }
 
 .button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.4vw 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.71vw;
+  padding: 1.4vw 2vw 1.4vw 2.76vw;
   height: 5.2vw;
   font-size: 0.7rem;
   font-style: normal;
@@ -415,6 +492,7 @@ p {
   letter-spacing: 2%;
   border-radius: 500px;
   cursor: pointer;
+  margin-bottom: 1vw;
 }
 
 .button_cost {
@@ -424,6 +502,7 @@ p {
 
 .button_cost:hover {
   background: #21E27C;
+  gap: 1.3vw;
 }
 
 .button_buy {
@@ -433,9 +512,26 @@ p {
 
 .button_buy:hover {
   background: #FD9C49;
+  gap: 1.3vw;
+}
+
+.call_to_action {
+  width: 14.3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.83vw;
 }
 
 .bullets {
+  background-image: url(./assets/bullets_form.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-top: 2.7vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,5 +541,137 @@ p {
           flex-direction: column;
   width: 11.72vw;
   height: 32.63vw;
+}
+
+.bullets-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.shadow_bullet {
+  background-image: url(./assets/menu_shadow.png);
+  background-size: 100%;
+  height: 2.81vw;
+}
+
+.bullets-item {
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1rem;
+}
+
+/*popup*/
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
+}
+
+.popup_open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup_open .popup_content {
+  -webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+          transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  opacity: 1;
+}
+
+.popup_body {
+  margin: 0 auto;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 952px;
+}
+
+.popup_close {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 10px;
+}
+
+.popup_content {
+  background-color: var(--color-light-s);
+  border-radius: 9px;
+  max-width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.popup_picture {
+  background-image: url(../../assets/images/pets-jennifer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+}
+
+.popup_text {
+  width: 351px;
+  margin: 0 20px 0 29px;
+}
+
+.popup_title {
+  padding-bottom: 10px;
+}
+
+.popup_description {
+  padding: 40px 0 40px 0;
+}
+
+.modal__list-point {
+  list-style-type: none;
+  font-style: var(--font-styleG);
+  font-size: var(--font-small-text);
+  padding-bottom: 10px;
+}
+
+.modal__list-point::before {
+  color: var(--color-primary);
+  content: "•";
+  padding-right: 10px;
+}
+
+.modal__list-point > .description {
+  font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */
