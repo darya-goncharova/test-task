@@ -33,7 +33,7 @@ $color_background: #FFFFFF;
 //Size
 $display-width: 100vw;
 $content-width: 81.77vw;
-$mobile-width: 16.67vw;
+$mobile-width: 420px;
 $border-main: 500px;
 
 
@@ -95,32 +95,41 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include media-mobile {
+        background-image: url(./assets/bg_mobile.jpg);
+    }
 }
 
 .container {
     max-width: $content-width;
     margin: 0 auto;
     @include media-mobile {
-        padding: 0 21px;
+        max-width: 276px;
     }
 }
 
   h1 {
     @include font($height: 4.25rem, $size: 2.75rem, $weight: 300);
     color: $color_text;
-    // @include media-mobile {
-    //     @include font($height: 4.2rem, $size: 3.2rem);
-    // }
+    @include media-mobile {
+        @include font($height: 1.5rem, $size: 0.9rem,  $weight: 300);
+    }
 }
 
 h2 {  
     @include font($height: 1.95rem, $size: 1.6rem, $weight: 400);
     color: $color_text;
+    @include media-mobile {
+        @include font($height: 0.79rem, $size: 0.65rem,  $weight: 400);
+    }
 }
 
 
 h3 {
     @include font($height: 1.34rem, $size: 1.1rem, $weight: 600);
+    @include media-mobile {
+        @include font($height: 0.85rem, $size: 0.7rem, $weight: 600);
+    }
 }
 
 
@@ -135,6 +144,10 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include media-mobile {
+        padding-top: 10px ;
+        gap: 22px;
+    }
 }
 
 
@@ -160,12 +173,6 @@ h3 {
     color: $color_text;
     &:hover {
         color: $color_theme;
-    }
-}
-
-.header-nav {
-    @include media-mobile {
-        display: none;
     }
 }
 
@@ -198,7 +205,15 @@ p {
     @include columns;
     gap: 0.5vw;
     width: 10.69vw;
+    @include media-mobile {
+        display: none;
+     }
 }
+
+.hamburger__menu_open {
+    display: block;
+}
+
 
 .contacts {
     width: 12.65vw;
@@ -227,9 +242,14 @@ p {
     display: flex;
     align-items: center;
     gap: 17.15px;
+    @include media-mobile {
+        display: none;
+     }
 }
 
-
+.pdf_block_open {
+    display: flex;
+}
 
 .big-logo {
     width: 14.27vw;
@@ -245,6 +265,9 @@ p {
         max-width: 100%;
         height: auto;
     }
+    @include media-mobile {
+        width: 75px;
+     }
 }
 
 
@@ -254,7 +277,16 @@ p {
         color: $color_button;
         padding-right: 4px;
     }
+    @include media-mobile {
+        display: none;
+     }
 }
+
+.social_links_open {
+    display: flex;
+}
+
+
 
 .social_links_buttons {
     display: flex;
@@ -280,6 +312,7 @@ p {
     justify-content: center;
     &:hover {
         background-color: $color_theme;   
+        @extend %transition;
         }
     &_purple {
         background-color: #976FCC;
@@ -291,16 +324,14 @@ p {
         background-color: #05A0EB;;
     }
     &_white {
-        &:hover {
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05); 
-        @extend %transition;
         }
         a{
             @include font($size: 0.55rem, $height: 0.67rem, $weight: 600);
             color: $color_button;
             }
     }
-}
+
 
 .ico_viber {
     background-image: url("./assets/viber.svg");
@@ -324,6 +355,9 @@ p {
 .contacts {
     @include columns;
     gap: 0.03vw; 
+    @include media-mobile {
+        width: 137px;
+     }
 }
 
 
@@ -353,13 +387,23 @@ padding-top: 4.3vw;
 gap: 0.99vw;
 width: 37.92vw;
 height: 30.42vw;
+@include media-mobile {
+    width: 100%;
+    text-align: center;
+    padding-top: 34px;
+    }
 }
+
 
 
 .title_addition {
     display: flex;
     align-items: center;
     gap: 0.83vw;
+    @include media-mobile {
+        padding-top: 5px;
+        justify-content: center;
+        }
 }
 
 .dots {
@@ -391,6 +435,11 @@ height: 30.42vw;
     flex-wrap: wrap;
     gap:  0.9vw;
     padding-top: 1.35vw;
+    @include media-mobile {
+        padding-top: 17px;
+        flex-direction: column;
+        gap: 12px;
+         }
 }
 
 .button {
@@ -410,6 +459,7 @@ height: 30.42vw;
     &_cost {
         background: $color_button;
         width: 19.53vw;
+       
         &:hover {
             background: $color_button_hover;
             gap: 1.3vw;
@@ -418,12 +468,19 @@ height: 30.42vw;
     &_buy {
         background: $color_theme;
         width: 17.44vw;
+        
         &:hover {
             background: $color_theme_hover;
             gap: 1.3vw;
         }
     }
     margin-bottom: 1vw;
+    @include media-mobile {
+        height: 60px;
+        width: 100%;
+        @include font($size: 0.5rem, $height: 0.8rem, $weight: 600);
+        padding: 14px 45px;
+         }
 }
 
 
@@ -432,6 +489,12 @@ height: 30.42vw;
     display: flex;
     align-items: flex-start;
     gap: 0.83vw;
+    @include media-mobile {
+        flex-direction: column;
+        align-items: center;
+       order: -1;
+       width: 100%;
+        }
 }
 
 
@@ -440,12 +503,15 @@ height: 30.42vw;
 .bullets {
 background-image: url(./assets/bullets_form.png);
 background-repeat: no-repeat;
-background-position: center;
-background-size: contain;
+background-size: cover;
+box-shadow: 0px 0px 75px rgba(0, 0, 0, 0.03);
 padding-top: 2.7vw;
 @include columns;
 width: 11.72vw;
 height: 32.63vw;
+@include media-mobile {
+   display: none;
+ }
 }
 
 .bullets-list { 
@@ -541,6 +607,9 @@ height: 32.63vw;
 
 .button_buy_popup {
     height: 4.43vw;
+        img {
+            transform: rotate(45deg)
+        }
 }
 
 
@@ -553,7 +622,7 @@ height: 32.63vw;
     height: 4.43vw;
     width: 17.44vw;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
-    color: $color_background;
+    color: $color_text;
     letter-spacing: 2%;
     border-radius: $border-main;
     cursor: pointer;
@@ -610,3 +679,97 @@ height: 32.63vw;
   background-color: $color_theme;
   background-image: url('./assets/checkbox.svg');
 }
+
+
+/*Burger*/
+
+.hamburger__menu {
+    display: none;
+  }
+  
+  @media (max-width:768px)  {
+   
+    .hamburger__menu {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 15px;
+        z-index: 3;
+        transition: 0.3s ease;
+    }
+  
+    .hamburger__menu:hover {
+      color: $color_theme;
+    }
+  
+  .hamburger__menu:before,
+  .hamburger__menu:after {
+     content: '';
+     background-color: $color_text;
+     position: absolute;
+     width: 100%;
+     height: 2.13px;
+     left: 0;
+     transition: all 0.3s ease 0s;
+  }
+  .hamburger__menu:before {
+  top: 4.31px;
+  }
+  .hamburger__menu:after {
+  bottom: 4.31px;
+  }
+  .hamburger__menu span {
+    content: '';
+    background-color:  $color_text;
+    position: absolute;
+    width: 100%;
+    height: 2.13px;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+  }
+  
+  .hamburger__menu_open:before {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .hamburger__menu_open:after {
+    transform: rotate(-45deg);
+    top: 20px;
+  } 
+  .hamburger__menu_open span {
+    transform: scale(0);
+  }
+  
+  .header-nav {
+    position: fixed;
+    overflow-x: hidden;
+    top: 88px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 24px;
+    background-color: #EDF2F5;
+    z-index: 3;
+    transform: translateX(100%);
+    transition: all 0.5s ease 0s;
+  }
+  
+  .header-nav_open {
+  transform: translateX(0);
+  right: -148px;
+  transition: 0.7s;
+  overflow: auto;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 35px;
+    line-height: 73px;
+    transition: 0.3s ease;
+    @include font($size: 0.5rem, $height: 0.7rem, $weight: 500);
+  }
+  
+  }
+  
